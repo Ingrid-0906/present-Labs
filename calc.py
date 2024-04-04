@@ -2,13 +2,13 @@ import yfinance as yf
 
 def extrair_dados_yahoo_finance(acao):
     """
-    Extrai dados históricos de uma ação da Yahoo Finance.
+    Extrai dados histÃ³ricos de uma aï¿½ï¿½o da Yahoo Finance.
 
-    Parâmetros:
-    acao (str): O ticker da ação a ser consultada.
+    Parï¿½metros:
+    acao (str): O ticker da aï¿½ï¿½o a ser consultada.
 
     Retorna:
-    DataFrame: Um DataFrame contendo os dados históricos da ação.
+    DataFrame: Um DataFrame contendo os dados histï¿½ricos da aï¿½ï¿½o.
     """
     dados = yf.download(acao, start="2023-01-01", end="2023-12-01")
     return dados
