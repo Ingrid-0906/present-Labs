@@ -1,9 +1,14 @@
-def investimento_juros_compostos(valor_inicial, taxa_juros, anos):
-    meses = anos * 12
-    taxa_mensal = taxa_juros / 100
-    valor_final = valor_inicial * (1 + taxa_mensal) ** meses
-    return valor_final
+import yfinance as yf
 
-# Exemplo de uso
-investimento = investimento_juros_compostos(1000, 0.5, 5)
-print(f"Valor do investimento após 5 anos: R${investimento:.2f}")
+def extrair_dados_yahoo_finance(acao):
+    """
+    Extrai dados histÃ³ricos de uma aï¿½ï¿½o da Yahoo Finance.
+
+    Parï¿½metros:
+    acao (str): O ticker da aï¿½ï¿½o a ser consultada.
+
+    Retorna:
+    DataFrame: Um DataFrame contendo os dados histï¿½ricos da aï¿½ï¿½o.
+    """
+    dados = yf.download(acao, start="2023-01-01", end="2023-12-01")
+    return dados
